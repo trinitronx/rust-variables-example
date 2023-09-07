@@ -66,4 +66,117 @@ fn main() {
     print!("Type of `truncated` is: ");
     print_type_of(&truncated);
     println!("The value of `remainder` is: {remainder}");
+
+    // Boolean types
+    let t = true;
+
+    let f: bool = false; // with explicit type annotation
+    println!("The value of `t` is: {t}");
+
+    print!("Type of `t` is: ");
+    print_type_of(&t);
+    println!("The value of `f` is: {f}");
+
+    // Char type
+    let c = 'z';
+    let z: char = 'ℤ'; // with explicit type annotation
+    let heart_eyed_cat = '😻';
+    println!("The value of `c` is: {c}");
+    print!("Type of `c` is: ");
+    print_type_of(&c);
+    println!("The value of `z` is: {z}");
+    println!("The value of `heart_eyed_cat` is: {heart_eyed_cat}");
+
+    // Compound Types
+    // Tuple
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    println!("The value of `tup` is: {:?}", tup);
+    print!("Type of `tup` is: ");
+    print_type_of(&tup);
+
+    // Destructuring a tuple via pattern matching
+    let (x, y, z) = tup;
+
+    println!("The value of `x` is: {x}");
+    println!("The value of `y` is: {y}");
+    println!("The value of `z` is: {z}");
+    print!("Type of `y` is: ");
+    print_type_of(&y);
+
+    // Destructuring a tuple via numeric accessors
+    let five_hundred = tup.0;
+    let six_point_four = tup.1;
+    let one = tup.2;
+    println!("The value of `five_hundred` is: {five_hundred}");
+    println!("The value of `six_point_four` is: {six_point_four}");
+    println!("The value of `one` is: {one}");
+
+    // Arrays
+    let a = [1, 2, 3, 4, 5];
+    println!("The value of `a` is: {:?}", a);
+    print!("Type of `a` is: ");
+    print_type_of(&a);
+
+    // Arrays have static length, so can represent things like months
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+    ];
+    println!("The value of `months` is: {:?}", months);
+    print!("Type of `months` is: ");
+    print_type_of(&months);
+
+    // Initialize array w/same value: 3, length: 5
+    let a = [3; 5];
+    println!("The value of `a` is: {:?}", a);
+    print!("Type of `a` is: ");
+    print_type_of(&a);
+
+    // Array indexing
+    let first = a[0];
+    let second = a[1];
+    println!("The value of `a[0]` is: {:?}", first);
+    print!("Type of `a[0]` is: ");
+    print_type_of(&first);
+    println!("The value of `a[1]` is: {:?}", second);
+    print!("Type of `a[1]` is: ");
+    print_type_of(&second);
+
+    // Array out-of-bounds indexing demo
+    // Entering an index > 4 results in panic 
+    // guess_array_demo();
+    
+}
+
+use std::io;
+
+fn guess_array_demo() {
+    let a = [1, 2, 3, 4, 5];
+
+    println!("Please enter an array index.");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+
+    println!("The value of the element at index {index} is: {element}");
 }
