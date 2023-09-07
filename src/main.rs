@@ -1,4 +1,5 @@
 use std::any::type_name;
+extern crate atty;
 
 const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
@@ -153,8 +154,14 @@ fn main() {
     print_type_of(&second);
 
     // Array out-of-bounds indexing demo
-    // Entering an index > 4 results in panic 
-    // guess_array_demo();
+    // Skip when STDIN is not a tty
+    if atty::is(atty::Stream::Stdin) {
+        println!("STDIN is a tty... running interactive array index demo");
+        // Entering an index > 4 results in panic
+        guess_array_demo();
+    } else {
+        println!("STDIN is NOT a tty... skipping interactive array index demo");
+    }
 
     // Functions
     main2();
