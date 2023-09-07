@@ -19,6 +19,9 @@
                 "kind": "build",
                 "isDefault": false
             },
+            "icon": {
+                "id": "play"
+            },
             "options": {
                 "shell": {
                     "args": [
@@ -37,7 +40,8 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "label": "rust: cargo build"
+            "label": "rust: cargo build",
+            "icon": {"id": "package"}
         },
         {
             "type": "cargo",
@@ -52,7 +56,10 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "label": "rust: cargo build --release"
+            "label": "rust: cargo build --release",
+            "icon": {
+                "id": "rocket"
+            }
         },
         {
             "type": "cargo",
@@ -64,7 +71,10 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "label": "rust: cargo check"
+            "label": "rust: cargo check",
+            "icon": {
+                "id": "check-all"
+            }
         },
         {
             "type": "cargo",
@@ -76,7 +86,10 @@
                 "kind": "build",
                 "isDefault": false
             },
-            "label": "rust: cargo clippy"
+            "label": "rust: cargo clippy",
+            "icon": {
+                "id": "clippy"
+            }
         },
         {
             "type": "cargo",
@@ -85,7 +98,10 @@
                 "$rustc"
             ],
             "group": "none",
-            "label": "rust: cargo clean"
+            "label": "rust: cargo clean",
+            "icon": {
+                "id": "trash"
+            }
         },
         {
             "type": "cargo",
@@ -94,7 +110,10 @@
                 "$rustc"
             ],
             "group": "test",
-            "label": "rust: cargo test"
+            "label": "rust: cargo test",
+            "icon": {
+                "id": "beaker"
+            }
         }
     ]
 }
