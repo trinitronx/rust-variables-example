@@ -1,5 +1,10 @@
+use std::any::type_name;
+
 const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
 
+fn print_type_of<T>(_: &T) {
+    println!("{}", type_name::<T>())
+}
 fn main() {
     let x = 5;
 
@@ -11,4 +16,12 @@ fn main() {
     }
 
     println!("The value of x is: {x}");
+
+    let spaces = "   ";
+    print!("Type of original variable `spaces` is: ");
+    print_type_of(&spaces);
+    let spaces = spaces.len();
+    println!("Variable `spaces` is '{}'", spaces);
+    print!("Type of shadowed variable `spaces` is: ");
+    print_type_of(&spaces);
 }
