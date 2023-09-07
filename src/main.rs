@@ -195,6 +195,8 @@ fn main2() {
     another_function(5);
     print_labeled_measurement(5, 'h');
     statements_vs_expressions();
+    functions_with_return_values();
+    semicolons_are_statements();
 }
 
 fn another_function(x: i32) {
@@ -214,4 +216,30 @@ fn statements_vs_expressions() {
     };
 
     println!("The value of curly-braced expression `let y = {{let x = 3; x + 1}}` is: {y}");
+}
+
+// Expressions do not include ending semicolons.
+// If you add a semicolon to the end of an expression,
+// you turn it into a statement,
+// and it will then not return a value.
+fn functions_with_return_values() {
+    let retval = five();
+
+    println!("The return value of function `five()` is: {retval}");
+}
+
+// function with implicit return value
+fn five() -> i32 {
+    5
+}
+
+fn semicolons_are_statements() {
+    let x = plus_one(5);
+
+    println!("The value of `plus_one(5)` is: {x}");
+}
+
+fn plus_one(x: i32) -> i32 {
+    // Uncomment semicolon & run cargo check to demonstrate compiler error
+    x + 1 //;
 }
