@@ -193,8 +193,25 @@ fn guess_array_demo() {
 // Functions
 fn main2() {
     another_function(5);
+    print_labeled_measurement(5, 'h');
+    statements_vs_expressions();
 }
 
 fn another_function(x: i32) {
     println!("The value of x is: {x}");
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value}{unit_label}");
+}
+
+fn statements_vs_expressions() {
+    let y = 6;
+    println!("The value of statement `let y = 6` is: {y}");
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of curly-braced expression `let y = {{let x = 3; x + 1}}` is: {y}");
 }
