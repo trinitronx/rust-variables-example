@@ -16,6 +16,9 @@ fn main() {
     }
 
     println!("The value of x is: {x}");
+    println!("The value of THREE_HOURS_IN_SECONDS is: {THREE_HOURS_IN_SECONDS}");
+    print!("Type of constant `THREE_HOURS_IN_SECONDS` is: ");
+    print_type_of(&THREE_HOURS_IN_SECONDS);
 
     let spaces = "   ";
     print!("Type of original variable `spaces` is: ");
