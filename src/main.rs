@@ -32,11 +32,11 @@ fn main() {
     let x = 2.0; // f64
 
     let y: f32 = 3.0; // f32
-    println!("The value of 2x shadowed `x` is: {THREE_HOURS_IN_SECONDS}");
+    println!("The value of 2x shadowed `x` is: {x}");
     print!("Type 2x shadowed `x` is: ");
     print_type_of(&x);
 
-    println!("The value of `y` is: {THREE_HOURS_IN_SECONDS}");
+    println!("The value of `y` is: {y}");
     print!("Type of `y` is: ");
     print_type_of(&y);
 
