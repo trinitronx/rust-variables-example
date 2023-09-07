@@ -27,4 +27,18 @@ fn main() {
     println!("Variable `spaces` is '{}'", spaces);
     print!("Type of shadowed variable `spaces` is: ");
     print_type_of(&spaces);
+
+    // Floating point numbers demo
+    let x = 2.0; // f64
+
+    let y: f32 = 3.0; // f32
+    println!("The value of 2x shadowed `x` is: {THREE_HOURS_IN_SECONDS}");
+    print!("Type 2x shadowed `x` is: ");
+    print_type_of(&x);
+
+    println!("The value of `y` is: {THREE_HOURS_IN_SECONDS}");
+    print!("Type of `y` is: ");
+    print_type_of(&y);
+
+
 }
