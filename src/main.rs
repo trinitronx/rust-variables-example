@@ -155,7 +155,9 @@ fn main() {
     // Array out-of-bounds indexing demo
     // Entering an index > 4 results in panic 
     // guess_array_demo();
-    
+
+    // Functions
+    main2();
 }
 
 use std::io;
@@ -179,4 +181,15 @@ fn guess_array_demo() {
     let element = a[index];
 
     println!("The value of the element at index {index} is: {element}");
+}
+
+// Functions
+fn main2() {
+    println!("Hello, world!");
+
+    another_function();
+}
+
+fn another_function() {
+    println!("Another function.");
 }
